@@ -1,0 +1,13 @@
+{
+  "name": "test_jwt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^7.4.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0"
+  }
+}
