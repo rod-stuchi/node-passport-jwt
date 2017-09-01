@@ -11,7 +11,9 @@ var params = {
 
 module.exports = function() {
     var strategy = new Strategy(params, function(payload, done) {
-        var user = users[payload.id] || null;
+      console.log('strategy::payload', payload);
+
+      var user = users.find(x => x.id === payload.id);
         if (user) {
             return done(null, {
                 id: user.id
@@ -26,7 +28,8 @@ module.exports = function() {
             return passport.initialize();
         },
         authenticate: function() {
-            return passport.authenticate("jwt", cfg.jwtSession);
+          return passport.authenticate("jwt", cfg.jwtSession);
+          //return passport.authenticate("jwt", { session: false });
         }
     };
 };
